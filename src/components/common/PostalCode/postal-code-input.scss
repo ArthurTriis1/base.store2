@@ -1,0 +1,13 @@
+.postal-code-input {
+  // Lighthouse
+  margin-top: 1rem;
+
+  [data-store-input] {
+    border: var(--border-width-0) solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
+
+    // Lighthouse
+    height: var(--tap-min-size); /* stylelint-disable-line */
+    margin-left: 1rem;
+  }
+}
