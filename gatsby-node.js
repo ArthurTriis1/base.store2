@@ -1,0 +1,14 @@
+exports.onCreateWebpackConfig = ({ actions: { setWebpackConfig }, stage }) => {
+  const profiling = process.env.GATSBY_STORE_PROFILING === 'true'
+
+  if (stage === 'build-javascript' && profiling) {
+    setWebpackConfig({
+      optimization: {
+        minimize: false,
+        moduleIds: 'named',
+        chunkIds: 'named',
+        concatenateModules: false,
+      },
+    })
+  }
+}
