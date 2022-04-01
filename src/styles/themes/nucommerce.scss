@@ -1,0 +1,171 @@
+// ----------------------------------------------------------
+// Theme: NuCommerce
+// ----------------------------------------------------------
+
+/* stylelint-disable */
+.nucommerce {
+
+  // Color palette
+  // --------------------------------------------------------
+
+  --color-neutral-0           : #fff;
+  --color-neutral-1           : #c7ccd1;
+  --color-neutral-2           : #7b7f83;
+  --color-neutral-3           : #171a1c;
+  --color-neutral-4           : #000;
+
+  --color-primary-0           : #ebdcff;
+  --color-primary-1           : #e2cffc;
+  --color-primary-2           : #8d50fd;
+  --color-primary-3           : #732fe2;
+  --color-primary-4           : #5900c8;
+
+  // Semantic colors
+  // --------------------------------------------------------
+
+  --color-link                : var(--color-primary-4);
+  --color-text                : var(--color-primary-4);
+  --color-text-subtle         : var(--color-neutral-2);
+  --color-text-inverse        : #ffffff;
+  --color-body-bkg            : #ffffff;
+  --color-focus-ring          : #8db6fa;
+
+  --color-success-text        : #2c6a52;
+  --color-success-bkg         : var(--color-success-text);
+  --color-highlighted-text    : var(--color-primary-4);
+  --color-highlighted-bkg     : var(--color-highlighted-text);
+  --color-info-text           : #2d499e;
+  --color-info-bkg            : var(--color-info-text);
+  --color-neutral-text        : var(--color-neutral-2);
+  --color-neutral-bkg         : var(--color-neutral-text);
+  --color-promo-text          : #f2636a;
+  --color-promo-bkg           : #fff68a;
+
+  --color-primary-bkg         : var(--color-primary-4);
+  --color-primary-text        : var(--color-text-inverse);
+  --color-primary-hover-bkg   : var(--color-primary-3);
+  --color-primary-active-bkg  : var(--color-primary-2);
+
+  --color-secondary-bkg       : var(--color-primary-0);
+  --color-secondary-text      : var(--color-primary-4);
+  --color-secondary-hover-bkg : var(--color-primary-0);
+  --color-secondary-active-bkg: var(--color-primary-1);
+
+  --color-tertiary-bkg        : transparent;
+  --color-tertiary-text       : var(--color-link);
+  --color-tertiary-hover-bkg  : var(--color-secondary-bkg);
+  --color-tertiary-active-bkg : var(--color-secondary-hover-bkg);
+
+  // Properties
+  // --------------------------------------------------------
+
+  --transition-timing         : .3s;
+  --transition-property       : all;
+  --transition-function       : ease-in-out;
+
+  --input-bkg-color           : var(--color-secondary-bkg);
+  --input-hover-bkg-color     : var(--color-secondary-hover-bkg);
+
+  --border-radius-default     : 0;
+  --border-color-default      : transparent;
+  --border-color-subtle       : var(--color-neutral-1);
+  --border-width-default      : 2px;
+  --border-width-subtle       : 3px;
+  --border-hover-color-default: var(--color-link);
+  --border-hover-color-subtle : var(--color-link);
+
+  --shadow                    : none;
+  --shadow-hover              : none;
+
+  // Typography & scale
+  // --------------------------------------------------------
+
+  --min-size                  : 48px;
+
+  --type-scale-mobile         : 1.15;
+  --type-scale-desk           : 1.2;
+
+  --font-size-base            : 14px; // 1rem
+
+  --font-family               : "Roboto Mono", monospace;
+  --font-family-title         : var(--font-family);
+
+  // Toggle
+  // ----------------------------------------------------------
+
+  [data-base-toggle] {
+    --toggle-content                               : "🤙";
+    --toggle-knob-bkg-color                        : var(--color-body-bkg);
+    --toggle-knob-border-color                     : var(--border-color-subtle);
+    --toggle-hover-knob-bkg-color                  : var(--toggle-knob-bkg-color);
+  }
+
+  // Select
+  // ----------------------------------------------------------
+
+  [data-base-select] { --select-height             : calc(var(--min-size) - 4px); }
+
+  // Quantity Selector / Stepper
+  // ----------------------------------------------------------
+
+  [data-store-quantity-selector] {
+    --qty-selector-height                          : calc(var(--min-size) + 10px);
+    --qty-selector-hover-button-bkg-color          : var(--color-body-bkg);
+  }
+
+  // Badge
+  // ----------------------------------------------------------
+
+  [data-store-badge] {
+    --badge-border-radius                          : 3rem;
+    --badge-success-bkg-color                      : transparent;
+    --badge-highlighted-bkg-color                  : transparent;
+    --badge-info-bkg-color                         : transparent;
+    --badge-neutral-bkg-color                      : transparent;
+    --badge-promo-bkg-color                        : transparent;
+  }
+
+  // Button
+  // ----------------------------------------------------------
+
+  [data-store-button] {
+    --button-transition-timing                     : .2s;
+
+    --button-secondary-border-color                : transparent;
+    --button-secondary-hover-border-color          : var(--color-primary-bkg);
+
+    --button-secondary-inverse-bkg-color           : var(--color-primary-hover-bkg);
+    --button-secondary-inverse-hover-bkg-color     : var(--button-secondary-inverse-bkg-color);
+    --button-secondary-inverse-active-bkg-color    : var(--color-primary-active-bkg);
+    --button-secondary-inverse-border-color        : transparent;
+    --button-secondary-inverse-hover-border-color  : var(--color-text-inverse);
+
+    --button-tertiary-active-bkg-color             : var(--color-secondary-active-bkg);
+
+    --button-tertiary-inverse-bkg-color            : transparent;
+    --button-tertiary-inverse-hover-bkg-color      : var(--button-secondary-inverse-bkg-color);
+  }
+
+
+  // Product Card
+  // ----------------------------------------------------------
+
+  [data-base-product-card] {
+    --product-card-bkg-color                       : var(--color-secondary-bkg);
+    --product-card-border-color                    : transparent;
+    --product-card-text-price-listing-color        : var(--color-primary-2);
+    --product-card-hover-bkg-color                 : var(--product-card-bkg-color);
+  }
+
+  // Incentives
+  // ----------------------------------------------------------
+
+  [data-base-incentives] {
+    --incentives-text-size                         : var(--font-size-0);
+    --incentives-bkg-color                         : var(--color-primary-0);
+    --incentives-divider-color                     : var(--border-hover-color-subtle);
+  }
+
+  &.inverse { --color-body-bkg: var(--color-primary-bkg); }
+}
+/* stylelint-enable */

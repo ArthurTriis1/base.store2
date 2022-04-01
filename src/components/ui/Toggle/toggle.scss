@@ -1,0 +1,180 @@
+@import "../../../styles/utilities";
+@import "../../../styles/vendors/include-media";
+
+[data-base-toggle] {
+  /* stylelint-disable */
+
+  // Design Tokens for Input Toggle
+  // --------------------------------------------------------
+
+  // Default properties
+  --toggle-height                    : calc(var(--min-size) / 1.25);
+  --toggle-shadow                    : var(--shadow);
+  --toggle-bkg-color                 : var(--input-bkg-color);
+
+  --toggle-content                   : "✓";
+  --toggle-content-color             : var(--toggle-checked-bkg-color);
+
+  --toggle-border-color              : var(--border-color-default);
+  --toggle-border-radius             : var(--border-radius-default);
+  --toggle-border-width              : var(--border-width-default);
+
+  --toggle-knob-radius               : var(--toggle-border-radius);
+  --toggle-knob-shadow               : var(--shadow);
+  --toggle-knob-bkg-color            : var(--color-link);
+  --toggle-knob-border-color         : var(--color-link);
+  --toggle-knob-border-width         : var(--toggle-border-width);
+
+  --toggle-transition-function       : var(--transition-function);
+  --toggle-transition-property       : var(--transition-property);
+  --toggle-transition-timing         : var(--transition-timing);
+
+  // Interactive states
+  --toggle-checked-bkg-color         : var(--toggle-hover-border-color);
+  --toggle-checked-border-color      : var(--toggle-hover-border-color);
+  --toggle-checked-knob-bkg-color    : white;
+  --toggle-checked-knob-border-color : var(--toggle-checked-knob-bkg-color);
+
+  --toggle-hover-shadow              : var(--shadow-hover);
+  --toggle-hover-bkg-color           : var(--input-hover-bkg-color);
+  --toggle-hover-border-color        : var(--border-hover-color-default);
+  --toggle-hover-knob-bkg-color      : var(--toggle-hover-border-color);
+  --toggle-hover-knob-border-color   : var(--toggle-hover-border-color);
+
+  --toggle-disabled-bkg-color        : black;
+  --toggle-disabled-border-color     : black;
+  --toggle-disabled-knob-bkg-color   : white;
+  --toggle-disabled-knob-border-color: white;
+  /* stylelint-enable */
+
+  // Structural Styles
+  // --------------------------------------------------------
+
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+
+  input {
+    @include focus-ring-visible;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--toggle-bkg-color);
+    border: var(--toggle-border-width) solid var(--toggle-border-color);
+    border-radius: var(--toggle-border-radius);
+    box-shadow: var(--toggle-shadow);
+    cursor: pointer;
+    transition: var(--toggle-transition-property) var(--toggle-transition-timing) var(--toggle-transition-function);
+    appearance: none;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--toggle-hover-bkg-color);
+        border-color: var(--toggle-hover-border-color);
+        box-shadow: var(--toggle-hover-shadow);
+
+        + [data-base-toggle-knob] {
+          background-color: var(--toggle-hover-knob-bkg-color);
+          border-color: var(--toggle-hover-knob-border-color);
+        }
+      }
+    }
+
+    &:checked {
+      background-color: var(--toggle-checked-bkg-color);
+      border: var(--toggle-border-width) solid var(--toggle-checked-border-color);
+
+      + [data-base-toggle-knob] {
+        background-color: var(--toggle-checked-knob-bkg-color);
+        border-color: var(--toggle-checked-knob-border-color);
+        &::after { opacity: 1; }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--toggle-checked-bkg-color);
+          border: var(--toggle-border-width) solid var(--toggle-checked-border-color);
+        }
+      }
+    }
+
+    &:disabled {
+      background-color: var(--toggle-disabled-bkg-color);
+      border-color: var(--toggle-disabled-border-color);
+
+      + [data-base-toggle-knob] {
+        background-color: var(--toggle-disabled-knob-bkg-color);
+        border-color: var(--toggle-disabled-knob-border-color);
+      }
+    }
+  }
+
+  @include media(">notebook") { --toggle-height: calc(var(--min-size) / 1.5); }
+}
+
+[data-base-toggle-container] {
+  position: relative;
+  overflow: visible;
+}
+
+[data-base-toggle-knob] {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  background-color: var(--toggle-knob-bkg-color);
+  border: var(--toggle-border-width) solid var(--toggle-knob-border-color);
+  border-radius: var(--toggle-knob-radius);
+  box-shadow: var(--toggle-knob-shadow);
+  transition: var(--toggle-transition-property) var(--toggle-transition-timing) var(--toggle-transition-function);
+  pointer-events: none;
+
+  &::after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--toggle-content-color);
+    line-height: 1;
+    opacity: 0;
+    content: var(--toggle-content);
+  }
+}
+
+[data-toggle-structure="horizontal"] {
+  input:checked + [data-base-toggle-knob] { left: calc(50% + (var(--toggle-border-width) * 2)); }
+
+  [data-base-toggle-container] {
+    width: calc(var(--toggle-height) * 2);
+    height: var(--toggle-height);
+  }
+
+  [data-base-toggle-knob] {
+    top: calc(var(--toggle-border-width) * 2);
+    left: calc(var(--toggle-border-width) * 2);
+    width: calc(50% - (var(--toggle-border-width) * 4));
+    height: calc(100% - (var(--toggle-border-width) * 4));
+  }
+}
+
+[data-toggle-structure="vertical"] {
+  input:checked + [data-base-toggle-knob] { bottom: calc(50% + (var(--toggle-border-width) * 2)); }
+
+  [data-base-toggle-container] {
+    width: var(--toggle-height);
+    height: calc(var(--toggle-height) * 2);
+  }
+
+  [data-base-toggle-knob] {
+    bottom: calc(var(--toggle-border-width) * 2);
+    left: calc(var(--toggle-border-width) * 2);
+    width: calc(100% - (var(--toggle-border-width) * 4));
+    height: calc(50% - (var(--toggle-border-width) * 4));
+  }
+}

@@ -1,0 +1,130 @@
+@import "vendors/include-media";
+@import "themes/default";
+@import "themes/base-store";
+@import "themes/nucommerce";
+@import "themes/grocery";
+
+.theming-poc {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 1000px;
+  min-height: 100vh;
+  padding: 48px 0;
+
+  hr {
+    width: 100%;
+    margin: 0;
+    border-top: 1px solid var(--color-border-display);
+  }
+
+  h2 {
+    padding: 0 96px;
+    font-weight: bold;
+    font-size: 2em;
+    letter-spacing: -.5px;
+  }
+}
+
+.theming-poc-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.theming-poc-content {
+  display: flex;
+  gap: 48px;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 0 96px;
+
+  code {
+    display: block;
+    font-size: .9rem;
+  }
+
+  > * > h3 {
+    color: gray;
+    font-weight: bold;
+    font-size: .8em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  > section { flex-basis: 25%; }
+  > main, > .main { flex-basis: 75%; }
+
+  > main, > section, > .main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.theming-poc-list {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  > * { flex-shrink: 0; }
+}
+
+.theming-poc-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 10px;
+}
+
+.theming-product-card {
+  flex-direction: column;
+  gap: 30px;
+
+  > .theming-poc-content {
+    padding: 0;
+    > section { flex-basis: 42%; }
+    > main, > .main { flex-basis: 58%; }
+  }
+
+  .theming-poc-list {
+    justify-content: space-between;
+    width: 100%;
+    column-gap: 24px;
+  }
+}
+
+.theming-button {
+  --color-body-bkg: #000;
+
+  .inverse {
+    padding: 10px;
+    background-color: var(--color-body-bkg);
+  }
+}
+
+.theming-typography {
+  h1, h2 {
+    margin: 0 0 .5rem;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  h1 { font-size: var(--font-size-hero); }
+  h2 { font-size: var(--font-size-heading); }
+  hr { margin: 2rem auto; }
+  p + p { margin-top: .5rem; }
+
+  .lead { font-size: var(--font-size-lead); }
+  .superlead { font-size: var(--font-size-superlead); }
+  .superheading { font-size: var(--font-size-superheading); }
+}

@@ -1,0 +1,102 @@
+// ----------------------------------------------------------
+// Theme: Base Store
+// ----------------------------------------------------------
+
+/* stylelint-disable */
+.base-store {
+
+  // Color palette
+  // --------------------------------------------------------
+
+  --color-neutral-0           : #f1f2f3;
+  --color-neutral-1           : #c7ccd1;
+  --color-neutral-2           : #9099a2;
+  --color-neutral-3           : #171a1c;
+  --color-neutral-4           : #000;
+
+  --color-primary-0           : #ecf0ff;
+  --color-primary-1           : #d8e2ff;
+  --color-primary-2           : #00419e;
+  --color-primary-3           : #002c71;
+  --color-primary-4           : #001947;
+
+  // Semantic colors
+  // --------------------------------------------------------
+
+  --color-link                : var(--color-primary-2);
+  --color-text                : var(--color-neutral-3);
+  --color-text-subtle         : var(--color-neutral-2);
+  --color-text-inverse        : #ffffff;
+  --color-body-bkg            : #ffffff;
+  --color-focus-ring          : #8db6fa;
+
+  --color-success-bkg         : #cee8de;
+  --color-success-text        : var(--color-text);
+  --color-highlighted-bkg     : #ebdcff;
+  --color-highlighted-text    : var(--color-text);
+  --color-info-bkg            : var(--color-primary-0);
+  --color-info-text           : var(--color-text);
+  --color-neutral-bkg         : var(--color-neutral-0);
+  --color-neutral-text        : var(--color-text);
+  --color-promo-bkg           : #fff68a;
+  --color-promo-text          : #f2636a;
+
+  --color-primary-bkg         : var(--color-primary-4);
+  --color-primary-text        : var(--color-text-inverse);
+  --color-primary-hover-bkg   : var(--color-primary-3);
+  --color-primary-active-bkg  : var(--color-primary-2);
+
+  --color-secondary-bkg       : transparent;
+  --color-secondary-text      : var(--color-primary-3);
+  --color-secondary-hover-bkg : var(--color-primary-0);
+  --color-secondary-active-bkg: var(--color-primary-1);
+
+  --color-tertiary-bkg        : transparent;
+  --color-tertiary-text       : var(--color-link);
+  --color-tertiary-hover-bkg  : var(--color-secondary-hover-bkg);
+  --color-tertiary-active-bkg : var(--color-secondary-active-bkg);
+
+  // Properties
+  // --------------------------------------------------------
+
+  --transition-timing         : .2s;
+  --transition-property       : all;
+  --transition-function       : ease-in-out;
+
+  --input-bkg-color           : var(--color-secondary-bkg);
+  --input-hover-bkg-color     : var(--color-secondary-hover-bkg);
+
+  --border-radius-default     : 4px;
+  --border-color-default      : var(--color-neutral-2);
+  --border-color-subtle       : transparent;
+  --border-width-default      : 2px;
+  --border-width-subtle       : 1px;
+  --border-hover-color-default: var(--color-link);
+  --border-hover-color-subtle : var(--color-neutral-1);
+
+  --shadow                    : none;
+  --shadow-hover              : 0 1px 4px rgb(0 0 0 / 10%), 0 6px 8px rgb(0 0 0 / 10%);
+
+  // Typography
+  // --------------------------------------------------------
+
+  --min-size                  : 48px;
+
+  --type-scale-mobile         : 1.15;
+  --type-scale-desk           : 1.25;
+
+  --font-size-base            : 16px; // 1rem
+
+  --font-family               : "Lato", sans-serif;
+  --font-family-title         : var(--font-family);
+
+  &.inverse { --color-body-bkg: var(--color-primary-4); }
+
+  // Product Card
+  // ----------------------------------------------------------
+
+  [data-base-product-card] {
+    --product-card-padding    : var(--space-1);
+  }
+}
+/* stylelint-enable */
