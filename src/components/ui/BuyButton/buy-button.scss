@@ -1,0 +1,27 @@
+@import "../Button/buttons";
+
+.button[data-store-buy-button] {
+  color: var(--color-text-inverse);
+  background-color: var(--bg-primary-default);
+
+  &:hover {
+    background-color: var(--bg-primary-hover);
+  }
+
+  &:active {
+    background-color: var(--bg-primary-pressed);
+  }
+
+  [data-icon] {
+    filter: var(--filter-color-neutral-0);
+  }
+
+  &:disabled {
+    color: var(--color-neutral-6);
+    background-color: var(--bg-disabled);
+
+    [data-icon] {
+      filter: var(--filter-color-neutral-5);
+    }
+  }
+}
