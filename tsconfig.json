@@ -1,0 +1,19 @@
+{
+  "extends": "@vtex/tsconfig",
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "module": "ESNext",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "noEmit": true,
+    "allowJs": true,
+    "paths": {
+      "src/*": ["src/*"],
+      "@generated/*": ["__generated__/*"]
+    },
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "__generated__/**/*.ts"],
+  "exclude": ["node_modules", "public"]
+}
